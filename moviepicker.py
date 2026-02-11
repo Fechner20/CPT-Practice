@@ -1,0 +1,39 @@
+def genr():
+  genre=input("What genre of movies do you want to choose from?(Horror,Drama,Comedy,Action,Documentery,Historical Fiction,Science Fiction,Fantasy,Thriller) ")
+
+genr()
+import random
+
+#Gemini gave me lists i copied and pasted them in
+horror=["Psycho", "Halloween", "The Exorcist", "The Shining", "Alien", "The Thing", "A Nightmare on Elm Street", "The Texas Chain Saw Massacre", "Night of the Living Dead", "Scream", "Hereditary", "Get Out", "The Conjuring", "The Blair Witch Project", "It", "Poltergeist", "The Descent", "28 Days Later", "The Ring", "Carrie", "Suspiria", "Saw", "Evil Dead II", "Nosferatu", "The Silence of the Lambs" ]
+drama=["The Shawshank Redemption", "The Godfather", "12 Angry Men", "Schindler's List", "Parasite", "Seven Samurai", "The Godfather Part II", "Pulp Fiction", "Harakiri", "Citizen Kane", "Twelve Years a Slave", "Moonlight", "Roma", "The Pianist", "Bicycle Thieves", "Come and See", "Portrait of a Lady on Fire", "A Separation", "City of God", "The 400 Blows"]
+action=["The Dark Knight", "Mad Max: Fury Road", "Die Hard", "Raiders of the Lost Ark", "Terminator 2: Judgment Day", "Aliens", "Seven Samurai", "The Matrix", "Inception", "Hard Boiled", "John Wick: Chapter 4", "Mission: Impossible – Fallout", "Top Gun: Maverick", "Crouching Tiger, Hidden Dragon", "The Raid", "Gladiator", "Heat", "Kill Bill: Vol. 1", "Léon: The Professional", "The Bourne Ultimatum", "Speed", "Predator", "RoboCop", "Point Break", "Enter the Dragon"]
+documentery=["Bowling for Columbine", "Super Size Me", "March of the Penguins", "I Am Not Your Negro", "An Inconvenient Truth", "The Social Dilemma", "Tinder Swindler", "My Octopus Teacher", "Fahrenheit 9/11", "Tiger King", "Making a Murderer", "The Last Dance", "Apollo 11", "Fire of Love", "The Elephant Whisperer", "David Attenborough: A Life on Our Planet", "Inside Job", "Food, Inc.", "Cowspiracy", "Seaspiracy"]
+historicalfiction=["Schindler's List", "Gladiator", "Lawrence of Arabia", "12 Years a Slave", "Braveheart", "The Last Samurai", "Gone with the Wind", "Saving Private Ryan", "Apollo 13", "The King's Speech", "Amadeus", "Titanic", "Inglourious Basterds", "The Last Emperor", "Master and Commander: The Far Side of the World", "The Imitation Game", "Lincoln", "Hidden Figures", "Dunkirk", "Spartacus", "Ben-Hur", "All Quiet on the Western Front", "The Revenant", "300", "Kingdom of Heaven"]
+scifi=["2001: A Space Odyssey", "Blade Runner", "Star Wars: A New Hope", "The Matrix", "Inception", "Arrival", "Interstellar", "Alien", "The Thing", "Children of Men", "Ex Machina", "Blade Runner 2049", "The Empire Strikes Back", "E.T. the Extra-Terrestrial", "Back to the Future", "Dune: Part Two", "The Terminator", "Terminator 2: Judgment Day", "Stalker", "Metropolis", "Solaris", "District 9", "The Martian", "Gravity", "Starship Troopers"]
+fantasy=["The Lord of the Rings: The Fellowship of the Ring", "The Lord of the Rings: The Two Towers", "The Lord of the Rings: The Return of the King", "Harry Potter and the Sorcerer's Stone", "The Princess Bride", "Spirited Away", "Pan's Labyrinth", "The Wizard of Oz", "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe", "Willow", "The NeverEnding Story", "Labyrinth", "Excalibur", "Conan the Barbarian", "Clash of the Titans", "Edward Scissorhands", "Howl's Moving Castle", "Stardust", "The Green Knight", "Dungeons & Dragons: Honor Among Thieves"]
+thriller=["Joker", "Promising Young Woman", "Uncut Gems", "The Girl with the Dragon Tattoo", "Basic Instinct", "Fatal Attraction", "A Quiet Place", "Don't Breathe", "Get Out", "Black Swan", "The Fugitive", "North by Northwest", "The Manchurian Candidate", "Misery", "American Psycho", "The Prestige", "Leon: The Professional", "Seven", "The Game", "Taxi Driver", "Drive", "The Departed", "Collateral", "The Hateful Eight", "Knives Out", "Glass Onion", "10 Cloverfield Lane", "Bird Box", "Split", "Source Code", "The Nice Guys", "Jack Reacher", "Man on Fire", "Training Day", "Nocturnal Animals", "Green Room", "Wind River", "The Gift", "The Guest", "Side Effects", "The Machinist", "Jacob's Ladder", "Insomnia", "One False Move", "The Long Goodbye", "L.A. Confidential", "Identity", "Copycat", "Red Dragon", "Panic Room"]
+
+while genre.lower  != "horror" or genre.lower != "drama" or genre.lower !=  "action" or genre.lower  != "documentery" or genre.lower  != "historical fiction" or  genre.lower != "science fiction" or genre.lower  != "sci fi" or genre.lower  != "scifi" or  genre.lower !="sci-fi" or  genre.lower !="fantasy" or genre.lower  != "thriller":
+        print("Please pick from one of the genres provided")
+
+
+if genre.lower == "horror":
+    genre1=horror
+elif genre.lower == "drama":
+    genre1=drama
+elif genre.lower == "action":
+    genre1=action
+elif genre.lower == "documentery":
+    genre1=documentery
+elif genre.lower == "science fiction" or "sci fi" or "sci-fi":
+    genre1=scifi
+elif genre.lower == "fantasy":
+    genre1=fantasy
+elif genre.lower == "thriller":
+    genre1=thriller
+
+def picker(x):
+    movie=random.randint(genre1)
+    ok=int(input(f"Your movie suggestion is {movie} if this is good press 1, if you would like a different suggestion from the same "))
+
