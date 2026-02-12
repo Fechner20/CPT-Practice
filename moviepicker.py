@@ -1,7 +1,11 @@
-def genr():
-  genre=input("What genre of movies do you want to choose from?(Horror,Drama,Comedy,Action,Documentery,Historical Fiction,Science Fiction,Fantasy,Thriller) ")
 
-genr()
+genre=str(input("What genre of movies do you want to choose from?(Horror,Drama,Comedy,Action,Documentery,Historical Fiction,Science Fiction,Fantasy,Thriller) "))
+num=3
+def johnrah():
+    johnrah = input("What genre of movies do you want to choose from?(Horror,Drama,Comedy,Action,Documentery,Historical Fiction,Science Fiction,Fantasy,Thriller)")
+    newmovie=johnrah
+    return newmovie
+john=johnrah
 import random
 
 #Gemini gave me lists i copied and pasted them in
@@ -14,26 +18,53 @@ scifi=["2001: A Space Odyssey", "Blade Runner", "Star Wars: A New Hope", "The Ma
 fantasy=["The Lord of the Rings: The Fellowship of the Ring", "The Lord of the Rings: The Two Towers", "The Lord of the Rings: The Return of the King", "Harry Potter and the Sorcerer's Stone", "The Princess Bride", "Spirited Away", "Pan's Labyrinth", "The Wizard of Oz", "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe", "Willow", "The NeverEnding Story", "Labyrinth", "Excalibur", "Conan the Barbarian", "Clash of the Titans", "Edward Scissorhands", "Howl's Moving Castle", "Stardust", "The Green Knight", "Dungeons & Dragons: Honor Among Thieves"]
 thriller=["Joker", "Promising Young Woman", "Uncut Gems", "The Girl with the Dragon Tattoo", "Basic Instinct", "Fatal Attraction", "A Quiet Place", "Don't Breathe", "Get Out", "Black Swan", "The Fugitive", "North by Northwest", "The Manchurian Candidate", "Misery", "American Psycho", "The Prestige", "Leon: The Professional", "Seven", "The Game", "Taxi Driver", "Drive", "The Departed", "Collateral", "The Hateful Eight", "Knives Out", "Glass Onion", "10 Cloverfield Lane", "Bird Box", "Split", "Source Code", "The Nice Guys", "Jack Reacher", "Man on Fire", "Training Day", "Nocturnal Animals", "Green Room", "Wind River", "The Gift", "The Guest", "Side Effects", "The Machinist", "Jacob's Ladder", "Insomnia", "One False Move", "The Long Goodbye", "L.A. Confidential", "Identity", "Copycat", "Red Dragon", "Panic Room"]
 
-while genre.lower  != "horror" or genre.lower != "drama" or genre.lower !=  "action" or genre.lower  != "documentery" or genre.lower  != "historical fiction" or  genre.lower != "science fiction" or genre.lower  != "sci fi" or genre.lower  != "scifi" or  genre.lower !="sci-fi" or  genre.lower !="fantasy" or genre.lower  != "thriller":
-        print("Please pick from one of the genres provided")
+genre=genre.lower()
 
 
-if genre.lower == "horror":
+#if genre != "horror" or genre  != "drama" or genre !=  "action" or genre  != "documentery" or genre != "historical fiction" or  genre != "science fiction" or genre != "sci fi" or genre  != "scifi" or  genre !="sci-fi" or  genre !="fantasy" or genre  != "thriller":
+  #    print("Error")
+        
+
+if genre == "horror":
     genre1=horror
-elif genre.lower == "drama":
+elif genre == "drama":
     genre1=drama
-elif genre.lower == "action":
+elif genre == "action":
     genre1=action
-elif genre.lower == "documentery":
+elif genre == "documentery":
     genre1=documentery
-elif genre.lower == "science fiction" or "sci fi" or "sci-fi":
+elif genre == "science fiction" or "sci fi" or "sci-fi":
     genre1=scifi
-elif genre.lower == "fantasy":
+elif genre == "fantasy":
     genre1=fantasy
-elif genre.lower == "thriller":
+elif genre == "thriller":
     genre1=thriller
 
+
 def picker(x):
-    movie=random.randint(genre1)
-    ok=int(input(f"Your movie suggestion is {movie} if this is good press 1, if you would like a different suggestion from the same "))
+    movie=random.choice(x)
+    return movie
+movie1=picker(genre1)
+
+
+def ok():
+    x=int(input(f"If the movie {movie1} is good please type 1, If you would like a different movie from the same genre type 2, if you want a totallly new movie from a new genere type 3 ")) 
+    if x == 1:
+            print("Thank you for using our movie services!")
+    elif x==2:
+            picker (genre1)
+    elif x==3:
+            picker(john)
+    else:
+         print("Error")
+    
+final= ok()
+print(final)
+
+        
+
+
+        
+    
+
 
